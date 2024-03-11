@@ -1,42 +1,25 @@
-import React from 'react'
-import './FooterStyles.css'
-import {FaFacebook, FaLinkedin, FaMailBulk, FaPhone, FaSearchLocation, FaTwitter} from 'react-icons/fa'
+import React from 'react';
+import './FooterStyles.css';
+import { Link } from 'react-router-dom';
+import {FaFacebook, FaLinkedin, FaMailBulk, FaPhone, FaSearchLocation, FaTwitter} from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <div className='footer'>
         <div className='footer-container'>
-            <div className='left'>
-                {/* <div className='location'>
-                    <FaSearchLocation size={20} style={{color: '#ffffff', marginRight: '2rem'}} />
-                    <div>
-                        <h4>Clayton, VIC 3168</h4>
-                    </div>
-                </div>
-                <div className='phone'>
-                    <h4><FaPhone size={20} style={{color: '#ffffff', marginRight: '2rem'}} />1-800-123-1234</h4>
-                </div>
-                <div className='email'>
-                    <h4><FaMailBulk size={20} style={{color: '#ffffff', marginRight: '2rem'}} />uvsmart@gmail.com</h4>
-                </div> */}
+            <div className='footer-section'>
+                <h4>Cover up when the index hits 3!</h4>
+                <p>Sun is bright, it is a great day to be outdoors with your family and friends. However, we are exposed to some of the strongest and most hazardous UV rays when we are outside.</p>
+                <Link to="/measures" className="learn-cover-up">Learn how to cover up</Link>
             </div>
-            <div className='right'>
-                <h4></h4>
-                {/* <p>Prem Mevada</p>
-                <p>Ryan Goh</p>
-                <p>Maisha Rabbani</p>
-                <p>Shuqun Tian </p>
-                <p>Sreekala Raghuram </p> */}
-                {/* <div className='social'>
-                    <FaFacebook size={30} style={{color: '#ffffff', marginRight: '1rem'}} />
-                    <FaTwitter size={30} style={{color: '#ffffff', marginRight: '1rem'}} />
-                    <FaLinkedin size={30} style={{color: '#ffffff', marginRight: '1rem'}} />
-                </div> */}
+            <div className='footer-section'>
+                <h4>Sensitive skin?</h4>
+                <p>What about those who suffer from itchy rashes, irritations, or even breakouts from using sunscreen? It is important to know how your skin reacts to sunscreen. Every skin type has the right to be protected safely and comfortably.</p>
+                <Link to="/measures" className="learn-cover-up">Learn what works for you</Link>
             </div>
-
         </div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

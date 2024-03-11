@@ -1,63 +1,63 @@
 .footer {
-    width: 100%;
-    padding: 6rem 0;
-    background: rgba(0,0,0,.8);
+    background-color: white; /* Dark background for footer */
+    color: black; /* White text color */
+    padding: 20px 0; /* Top and bottom padding */
 }
 
 .footer-container {
-    max-width: 1140px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px;
-}
-
-.footer .left {
-    height: 100%;
-    max-width: 100%;
     display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    justify-content: space-around; /* Distribute space between sections */
+    align-items: flex-start; /* Align items at the start */
+    flex-wrap: wrap; /* Wrap sections for smaller screens */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Padding on the sides */
 }
 
-.footer .right {
-    height: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    margin: auto;
+.footer-section {
+    margin-bottom: 20px; /* Bottom margin for each section */
 }
 
-.footer h4 {
-    font-size: 1.4rem;
-    padding: 1rem 0;
+.footer-section h4 {
+    margin-bottom: 15px; /* Bottom margin for headings */
+    color: black;
 }
 
-.footer p {
-    font-size: 1.2rem;
-    padding: 1rem 0;
+.footer-section p {
+    margin-bottom: 10px; /* Bottom margin for paragraphs */
+    color: black;
 }
 
-.footer .location {
-    display: flex;
-    align-items: center;
+.footer-section a {
+    color: black; /* White text color for links */
+    text-decoration: underline; /* Underline text for emphasis */
 }
 
-.footer .location p {
-    padding-bottom: .5rem;
-}
-
-.footer .location h4 {
-    padding-top: 0;
-}
-
-@media screen and (max-width:640px) {
+/* Add media queries as necessary for responsiveness */
+@media (max-width: 768px) {
     .footer-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .right .social {
-        margin: auto;
+    .footer-section {
+        width: 100%; /* Full width for smaller screens */
+        text-align: center; /* Center align text */
     }
+}
+
+.learn-cover-up {
+    display: inline-block; /* Allows padding and background color to affect the link */
+    background-color: #f0f0f0; /* Light gray background */
+    color: #000; /* Black text */
+    padding: 5px 10px; /* Adds some padding around the text */
+    margin-top: 10px; /* Adds some space above the link */
+    border-radius: 4px; /* Optional: adds rounded corners */
+    text-decoration: none;
+     /* Removes underline from link */
+}
+
+/* Style for hovering over the link */
+.learn-cover-up:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
 }
