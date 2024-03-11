@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color:  orange; /* Light sky blue background for the entire app */
+  padding: 20px;
+  min-height: 60vh; /* Adjust this value as needed */
+  padding: 20px; /* Add more padding if needed */
+  background-color: orange;
+  
 }
 
 .App-logo {
@@ -36,3 +42,112 @@
     transform: rotate(360deg);
   }
 }
+.description {
+  margin-top: 10px;
+  margin-bottom: 20px; /* Adds space below the description text */
+}
+.input-group {
+  margin-top: 20px; /* Adds space above the input group if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group input, .input-group button {
+  margin: 5px 0; /* Keeps vertical alignment */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-group button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background-color: #45a049;
+}
+.tile-container {
+  display: flex;
+  justify-content: start; /* Aligns tiles to the start of the container */
+  gap: 8px; /* Reduced gap between tiles */
+  flex-wrap: wrap; /* Allows tiles to wrap in smaller screens */
+  margin-bottom: 20px; /* Space before the chart */
+}
+
+.tile {
+  background-color: #f0f0f0;
+  padding-top: 30px;
+  padding: 10px; /* Further reduced padding */
+  border-radius: 8px; /* Smoother border radius */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Lighter shadow for subtlety */
+  width: 120px; /* Further reduced width */
+  text-align: center;
+  position: relative; /* For icon positioning */
+}
+
+.tile-title {
+  font-size: 14px; /* Smaller font size for titles */
+  font-weight: bold;
+  color :black;
+  margin-top: 25px;
+  margin-bottom: 5px; /* Adjusted bottom margin */
+}
+
+.tile-value {
+  font-size: 13px;
+  color :black;
+   /* Smaller font size for values */
+}
+
+.sun-icon {
+  position: absolute;
+  top: 10px; /* Adjust top positioning */
+  left: 10px; /* Adjust left positioning */
+  width: 20px; /* Adjust icon size */
+  height: 20px; /* Adjust icon size */
+}
+
+.timeline-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 10px;
+  padding: 10px;
+  background-color: transparent; /* Example background */
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.timeline-segment {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 5px;
+  display: flex;
+  background-color: #f0f0f0;
+  flex-direction: column; /* Stack the value and time vertically */
+}
+
+/* Highlight UV index values greater than 7 */
+.high-uv .uv-value {
+  color: red;
+  font-weight: bold;
+}
+
+.uv-value {
+  margin-bottom: 5px;
+  font-weight: bold;
+   /* Add space between the UV value and the time */
+}
+
+.time {
+  font-size: 0.8rem; /* Slightly smaller font size for time */
+}
+
+

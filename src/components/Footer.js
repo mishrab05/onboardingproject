@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='footer'>
         <div className='footer-container'>
             <div className='left'>
-                <div className='location'>
+                {/* <div className='location'>
                     <FaSearchLocation size={20} style={{color: '#ffffff', marginRight: '2rem'}} />
                     <div>
                         <h4>Clayton, VIC 3168</h4>
@@ -18,16 +18,20 @@ const Footer = () => {
                 </div>
                 <div className='email'>
                     <h4><FaMailBulk size={20} style={{color: '#ffffff', marginRight: '2rem'}} />uvsmart@gmail.com</h4>
-                </div>
+                </div> */}
             </div>
             <div className='right'>
-                <h4>About the company</h4>
-                <p>Some text about the company</p>
-                <div className='social'>
+                <h4></h4>
+                {/* <p>Prem Mevada</p>
+                <p>Ryan Goh</p>
+                <p>Maisha Rabbani</p>
+                <p>Shuqun Tian </p>
+                <p>Sreekala Raghuram </p> */}
+                {/* <div className='social'>
                     <FaFacebook size={30} style={{color: '#ffffff', marginRight: '1rem'}} />
                     <FaTwitter size={30} style={{color: '#ffffff', marginRight: '1rem'}} />
                     <FaLinkedin size={30} style={{color: '#ffffff', marginRight: '1rem'}} />
-                </div>
+                </div> */}
             </div>
 
         </div>

@@ -1,13 +1,19 @@
-.background-image {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: -1;
-}
+
 
 .hero {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden; /* Ensure the image does not overflow */
+    height: 50vh; /* This controls the portion of the screen the wallpaper takes */
+    width: 100%; /* Ensure it covers the full width */
+    overflow: hidden; /* Hide overflow to maintain the height constraint */
+    position: relative; /* Set a stacking context for z-index */
+    z-index: 1; /* Ensure it's above the background but below content */
+}
+
+.background-image {
+    width: 100%; /* Cover the full width of the .hero container */
+    height: 100%; /* Match the height of the .hero container */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
+    position: absolute; /* Position it within .hero container */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the image stays in the background */
 }
