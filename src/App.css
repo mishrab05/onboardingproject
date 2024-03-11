@@ -4,9 +4,16 @@
   padding: 20px;
   min-height: 60vh; /* Adjust this value as needed */
   padding: 20px; /* Add more padding if needed */
-  background-color: orange;
+  
   
 }
+
+.Appmeasures {
+  background-color: white; /* Ensures the background is white */
+  padding: 20px 0; /* Provides padding to space out content from the edges */
+  min-height: 100vh; /* Ensures the section takes minimum full height of the viewport */
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -150,4 +157,102 @@
   font-size: 0.8rem; /* Slightly smaller font size for time */
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* Increase this value to space out the container below the Navbar */
+}
+
+
+.uv-button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-grow: 1;
+  margin: 0 5px;
+  font-weight: bold;
+  /* Add other styles for the uv-button class if needed */
+}
+
+
+.uv-button:hover {
+  transform: scale(1.1);
+}
+
+.low {
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
+}
+
+.moderate {
+  background: linear-gradient(90deg, #a8e063, #fdd835);
+}
+
+.high {
+  background: linear-gradient(90deg, #fdd835, #f57f17);
+}
+
+.very-high {
+  background: linear-gradient(90deg, #f57f17, #e53935);
+}
+
+.extreme {
+  background: linear-gradient(90deg, #e53935, #b71c1c);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-container {
+  text-align: center;
+  border: 2px solid black; /* Add black border */
+  border-radius: 25px; /* rounded borders */
+  margin: 0; /* Remove margin if there's any */
+  opacity: 0; /* Start with the image container invisible */
+  transition: opacity 0.8s ease; /* Transition effect for the opacity */
+}
+
+.image-container img {
+  width: 80%; /* Adjust this value to reduce the size of the icons */
+  height: auto; /* This will maintain the aspect ratio of the images */
+  padding: 5%;
+  display: block;
+  margin: 0 auto; /* This centers the image in the container if it's smaller than the container width */
+}
+
+.image-container p {
+  margin-top: 10px; /* Adjust as needed */
+  color:black;
+}
+
+.image-container.active {
+  opacity: 1; /* Make the image container fully visible */
+}
+
+.information-text-section {
+  /* Styling for the information text section */
+  background: #ef8c30; /* Example background color */
+  padding: 20px;
+  margin-top: 20px; /* To ensure there is space between this section and the elements above it */
+}
+
+.info-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 90px); /* Assuming navbar height is 90px */
+  margin-top: 90px; /* Adjust based on the actual navbar height */
+}
+
+.info-message p {
+  text-align: center;
+  margin: 0; /* Adjust if needed */
+  color: black;
+  font-size: larger;
+}
 
