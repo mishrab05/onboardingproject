@@ -59,6 +59,7 @@
   flex-wrap: wrap; /* Allows items to wrap onto the next line */
   gap:8px;
 
+
 }
 
 .input-group input, .input-group button {
@@ -322,13 +323,6 @@
   flex-shrink: 0; /* Prevent resizing */
 }
 
-.card-image {
-  width: 550px; /* Adjust icon size */
-  height: auto;
-  margin: auto; /* Center the image horizontally */
-  display: block; /* Ensures margin auto works */
-}
-
 
 .card-content {
   flex: 1; /* Fill the remaining space */
@@ -405,6 +399,13 @@
   overflow: hidden; /* Hide overflow to maintain the height constraint */
   position: relative; /* Set a stacking context for z-index */
  
+}
+
+.card-image {
+  width: 550px; /* Adjust icon size */
+  height: auto;
+  margin: auto; /* Center the image horizontally */
+  display: block; /* Ensures margin auto works */
 }
 
 .uv-index-levels-guide {
