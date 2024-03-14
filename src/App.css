@@ -50,23 +50,26 @@
   }
 }
 .description {
-  margin-top: 10px;
   margin-bottom: 20px; /* Adds space below the description text */
 }
 .input-group {
   margin-top: 20px; /* Adds space above the input group if needed */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Centers the input group horizontally */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  gap:8px;
+
 }
 
 .input-group input, .input-group button {
-  margin: 5px 0; /* Keeps vertical alignment */
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+  margin-right: 8px;
 }
+
+
 
 .input-group button {
   background-color: #4CAF50;
@@ -84,6 +87,7 @@
   gap: 8px; /* Reduced gap between tiles */
   flex-wrap: wrap; /* Allows tiles to wrap in smaller screens */
   margin-bottom: 20px; /* Space before the chart */
+  margin-top: 40px;
 }
 
 .tile {
@@ -92,7 +96,7 @@
   padding: 10px; /* Further reduced padding */
   border-radius: 8px; /* Smoother border radius */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Lighter shadow for subtlety */
-  width: 120px; /* Further reduced width */
+  width: 150px; /* Further reduced width */
   text-align: center;
   position: relative; /* For icon positioning */
 }
@@ -381,3 +385,44 @@
   text-align: center;
 }
 
+.centered-uvdescription{
+  color: #333; /* Dark text for visibility */
+  font-size: 1.2em; /* Adjust the font size as necessary */
+  margin-bottom: 40px; /* Spacing below the description */
+  text-align: left;
+}
+
+.wallpaper-style {
+  height: 60vh; /* This controls the portion of the screen the wallpaper takes */
+  width: 100%; /* Ensure it covers the full width */
+  overflow: hidden; /* Hide overflow to maintain the height constraint */
+  position: relative; /* Set a stacking context for z-index */
+ 
+}
+
+.uv-index-levels-guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjust gap between tiles */
+  margin-top: 20px; /* Space from top */
+  margin-left: 30px;
+}
+
+.uv-index-level {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  gap: 10px; /* Space between text */
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 150px; /* Width of the rectangle */
+  color: #333; /* Adjust text color for visibility if needed */
+}
+
+.uv-index-level-text, .uv-index-level-range {
+  font-size: 0.9rem; /* Text size */
+  color: #333; /* Text color for readability */
+  font-weight: bold;
+}

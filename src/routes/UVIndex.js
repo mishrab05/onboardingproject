@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../App.css'; // Ensure this path is correct or adjust as needed
+import UVwallpaper from '../assets/childplay.jpg'
 import sunIcon from '../assets/sunicon.png'; 
 import axios from 'axios';
-
+import low from '../assets/low.png';
+import moderate from '../assets/moderate.png';
+import high from '../assets/high.png';
+import vhigh from '../assets/vhigh.png';
+import extreme from '../assets/extreme.png';
 
 const UVIndex = () => {
     
-  const [currentUvIndex, setCurrentUvIndex] = useState('Loading...');
-  const [uvIndexLevel, setUvIndexLevel] = useState('Loading...');
-  const [maxUvIndex, setMaxUvIndex] = useState('Loading...');
+  const [currentUvIndex, setCurrentUvIndex] = useState('0');
+  const [uvIndexLevel, setUvIndexLevel] = useState('0');
+  const [maxUvIndex, setMaxUvIndex] = useState('0');
   const [lat, setLat] = useState('');
   const [lon, setLon] = useState('');
   const [suburb, setSuburb] = useState(''); 
-  const [temperature, setTemperature] = useState('Loading...');
+  const [temperature, setTemperature] = useState('0');
   const [forecastData, setForecastData] = useState(Array.from({ length: 13 }, (_, i) => ({
     uv_time: new Date(new Date().setHours(i + 7, 0, 0, 0)).toISOString(), // Starts from 7 AM to 7 PM
     uv: "0" // Default value set to "0"
@@ -102,14 +107,12 @@ const UVIndex = () => {
     const date = new Date(utcDate);
     return new Intl.DateTimeFormat('en-AU', {
       timeZone,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit',
-    }).format(date);
+      hour12: true, // Ensure 12-hour format
+    }).format(date).toUpperCase(); // Returns only the time part with AM/PM
   };
+  
    
 
   const updateUvIndexLevel = (index) => {
@@ -120,28 +123,42 @@ const UVIndex = () => {
     else return 'Extreme';
   };
 
-  
-
-  
-
   const renderTimeline = () => {
     return forecastData.map((data, index) => {
+      // Directly use the formattedTime since it now correctly formats to "HH:MM AM/PM"
       const formattedTime = convertToAustralianTime(data.uv_time, 'Australia/Sydney');
-      const timePart = formattedTime.split(', ')[1];
-      const hourPart = timePart.split(':')[0]; // Extract just the hour part
-      // const date = new Date(data.uv_time);
-      // const timeString = date.getHours(); // If needed, parse back to Date to extract hours
-      // const formattime = convertToAustralianTime(data.uv_time);
+  
       return (
         <div key={index} className={`timeline-segment ${data.uv >= 7 ? "high-uv" : ""}`}>
           <div className="uv-value">{Math.round(data.uv)}</div>
-          <div className="time">{`${hourPart}:00`}</div>
+          <div className="time">{formattedTime}</div> 
         </div>
       );
     });
   };
   
-
+  
+  
+  const UvIndexLevelsGuide = () => {
+    const levels = [
+      { level: 'Low', range: '0-2', color: '#4CAF50' }, // Green
+      { level: 'Moderate', range: '3-5', color: '#FFEB3B' }, // Yellow
+      { level: 'High', range: '6-7', color: '#FF9800' }, // Orange
+      { level: 'Very High', range: '8-10', color: '#F44336' }, // Light Red
+      { level: 'Extreme', range: '11+', color: '#B71C1C' }, // Dark Red
+    ];
+  
+    return (
+      <div className="uv-index-levels-guide">
+        {levels.map((item) => (
+          <div className="uv-index-level" key={item.level} style={{ backgroundColor: item.color }}>
+            <span className="uv-index-level-text">{item.level}</span>
+            <span className="uv-index-level-range">{item.range}</span>
+          </div>
+        ))}
+      </div>
+    );
+  };
   
 
   const handleSearchClick = () => {
@@ -158,14 +175,21 @@ const UVIndex = () => {
     return (
       <div>
         <Navbar/>
+        <div className='wallpaper-style'>
+        <img src={UVwallpaper} alt="UV Index Wallpaper" className="background-image" />
+        </div>
         <div className='App'>
-        <h1>UV Index</h1>
+        <div className="centered-container">
+          <h1 className="centered-title">Check UV Index in your area</h1>
+          <p className="centered-uvdescription">  
+          Knowing the UV index is essential for safeguarding against sun exposure. Explore the UV index for your location to make informed decisions about outdoor activities. Ensure your family's safety by planning ahead and equipping yourselves with adequate sun protection.
+          </p>
+        </div>
         <p className="description">Enter a suburb below and search for its UV Index.</p>
       <div className="input-group">
         <input type="text" value={suburb} onChange={(e) => setSuburb(e.target.value)} placeholder="Please enter Suburb" />
         {/* <input type="text" value={lon} onChange={(e) => setLon(e.target.value)} placeholder="Longitude" /> */}
         <button onClick={handleSearchClick}>Search</button>
-        <p className="selected-suburb">Suburb: {suburb}</p>
       </div>
       <div className="tile-container">
         <div className="tile">
@@ -188,7 +212,12 @@ const UVIndex = () => {
           <p className="tile-title">Temperature</p>
           <p className="tile-value">{temperature}</p>
           </div>
+          <div className="uv-index-levels-sidebar">
+            <h3>UV Index levels</h3>
+            <UvIndexLevelsGuide />
+          </div>
       </div>
+      <h2> Hourly forecast</h2>
       <div className="timeline-container">
         {renderTimeline()}
       </div>
