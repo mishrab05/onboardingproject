@@ -256,3 +256,128 @@
   font-size: larger;
 }
 
+
+/* Further styling as necessary */
+.learn-cover-up {
+  display: inline-block; /* Allows padding and background color to affect the link */
+  background-color: #f0f0f0; /* Light gray background */
+  color: #000; /* Black text */
+  padding: 5px 10px; /* Adds some padding around the text */
+  margin-top: 10px; /* Adds some space above the link */
+  border-radius: 4px; /* Optional: adds rounded corners */
+  text-decoration: none;
+   /* Removes underline from link */
+}
+
+/* Style for hovering over the link */
+.learn-cover-up:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* App.css */
+.centered-container {
+  text-align: center;/* Adjust as needed */
+  padding: 10px 0;
+}
+
+.centered-title {
+  font-size: 2.5em; /* Larger font size for the title */
+  color: black; /* Dark text for visibility */
+  margin: 0 0 20px; /* Spacing below the title */
+  padding: 0;
+}
+
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white; /* Yellow background */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Soft shadow */
+  margin: 20px; /* Spacing between cards and other elements */
+  width: calc(50% - 40px); /* Adjust width to 50% minus the gap from 'gap' property */
+  max-width: 600px; /* Limits card size, increase if you want larger cards */
+}
+
+
+
+
+.card-icon {
+  width: 120px; /* Adjust icon size */
+  height: auto;
+  flex-shrink: 0; /* Prevent resizing */
+}
+
+
+.card-content {
+  flex: 1; /* Fill the remaining space */
+  color: black;
+  position: relative; /* This is necessary if you're using absolute positioning for children */
+  padding-bottom: 70px; 
+}
+
+
+.card-content p {
+  /* Ensures paragraphs are black */
+  color: black;
+  margin-top: 10px;
+
+}
+
+
+.card-link-button {
+  background-color: orange; /* Default background color set to orange */
+  color: black; /* Text color set to black */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Fully rounded edges for button */
+  position: absolute;
+  bottom: 10px; /* Space from the bottom of the card content */
+  right: 10px; /* Space from the right of the card content */
+  display: block;
+  border: 2px solid transparent; /* Transparent border to maintain the layout */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  /* Adjust margin to ensure the button aligns to the bottom-right of the card */
+}
+
+.card-link-button:hover {
+  background-color: white; /* Background color on hover set to white */
+  color: black; /* Text color remains black on hover */
+  border-color: orange; /* Border color changes to orange on hover to remain visible */
+}
+
+
+@media (max-width: 768px) {
+    .info-card {
+      width: calc(100% - 40px); /* On smaller screens, cards take full width minus the gap */
+    }
+  
+
+  .card-icon {
+    margin-bottom: 20px;
+  }
+
+  .card-link-button {
+    position: static; /* On small screens, don't absolutely position the button */
+    width: auto; /* Let it take the width according to its content */
+    margin-top: 20px; /* Adds space above the button */
+  }
+}
+
+.centered-description {
+  color: #333; /* Dark text for visibility */
+  font-size: 1.2em; /* Adjust the font size as necessary */
+  margin-bottom: 40px; /* Spacing below the description */
+  text-align: center;
+}
+

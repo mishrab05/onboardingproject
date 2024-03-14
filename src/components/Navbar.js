@@ -18,10 +18,10 @@ const Navbar = () => {
                 <Link to='/'>Home</Link>
             </li>
             <li>
-                <Link to='/measures'>Protection Measures</Link>
+                <Link to='/uvindex'>UV index level</Link>
             </li>
             <li>
-                <Link to='/reminders'>Reminders</Link>
+                <Link to='/measures'>Protection measures</Link>
             </li>
             <li>
                 <Link to='/impact'>UV Impact</Link>
