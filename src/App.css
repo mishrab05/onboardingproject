@@ -318,6 +318,13 @@
   flex-shrink: 0; /* Prevent resizing */
 }
 
+.card-image {
+  width: 550px; /* Adjust icon size */
+  height: auto;
+  margin: auto; /* Center the image horizontally */
+  display: block; /* Ensures margin auto works */
+}
+
 
 .card-content {
   flex: 1; /* Fill the remaining space */
