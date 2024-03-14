@@ -1,0 +1,197 @@
+
+/* Combined Shared Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    display: flex;
+    align-items: center; /* Vertically centers the icon with the text */
+  }
+  
+  h2 i, h2 img, h2 svg {
+    margin-right: 8px; /* Adds some space between the icon and the text */
+  }
+    
+.section-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 3%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #0d0270;
+    }
+    
+    .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    }
+    
+    .uv-button, #calculateButton {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 0 5px;
+    font-weight: bold;
+    background-color: #0d0270; /* Default color, can be overridden below */
+    }
+    
+    .uv-button:hover, #calculateButton:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: #0d0270;
+    }
+    
+    /* Specific UV Index Button Styles */
+    .low, .moderate, .high, .very-high, .extreme {
+    background: linear-gradient(90deg, #56ab2f, #a8e063);
+    }
+    
+    .moderate {
+    background: linear-gradient(90deg, #a8e063, #fdd835);
+    }
+    .high {
+    background: linear-gradient(90deg, #fdd835, #f57f17);
+    }
+    .very-high {
+    background: linear-gradient(90deg, #f57f17, #e53935);
+    }
+    .extreme {
+    background: linear-gradient(90deg, #e53935, #b71c1c);
+    }
+    
+    .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    }
+    
+    .image-container {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    }
+    
+    .image-container.active {
+    opacity: 1;
+    }
+    
+    .image-container img {
+    width: 80%;
+    height: auto;
+    padding: 5%;
+    display: block;
+    margin: 0 auto;
+    }
+    
+    .image-container p, .error, #sunscreenResult, #sunscreenTips {
+    margin-top: 10px;
+    }
+    
+    /* Sunscreen Calculator Styles */
+    .sunscreen-calculator {
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .form-group label {
+      margin-bottom: 5px;
+    }
+    
+    .sunscreen-calculator input[type="number"],
+    .sunscreen-calculator select {
+      width: 100%;
+      padding: 5px 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .gender-options, .gender-option {
+      display: flex;
+      align-items: center;
+    }
+    
+    .gender-option {
+      margin-right: 20px;
+    }
+    
+    #sunscreenResult, #sunscreenTips {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    
+    .error {
+      color: red;
+    }
+    
+    .tips-container h2 {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em; /* Adjust size as needed */
+      margin-bottom: 0.5em; /* Spacing between title and text area */
+    }
+    
+    .tips-container img {
+      margin-right: 10px; /* Spacing between the icon and the title text */
+    }
+    
+    /* Style for the text area displaying sun protection tips */
+    .additional-info {
+      background-color: #0d0270; /* Orange background */
+      font-weight: bold;
+      color: white; /* White text */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Rounded corners */
+      padding: 10px; /* Padding inside the text area */
+      margin-top: 20px; /* Margin above the text area */
+      font-family: 'Arial', sans-serif; /* Consistent font */
+      font-size: medium;
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      resize: none; /* Prevent resizing */
+      width: 100%; /* Full width */
+      height: 150px; /* Fixed height */
+    }
+    
+    .skin-sensitivity-description {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 5px;
+    }
+    
+    
+    @media (max-width: 768px) {
+      .button-container, .form-group, .sunscreen-calculator div {
+          flex-direction: column;
+          align-items: center;
+      }
+      
+      .additional-info, .image-container img, .sunscreen-calculator input[type="number"],
+      .sunscreen-calculator input[type="radio"], .sunscreen-calculator select {
+          width: 100%; /* Full width on small screens */
+      }
+    }
