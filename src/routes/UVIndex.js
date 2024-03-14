@@ -50,7 +50,7 @@ const UVIndex = () => {
     const forecastUrl = `https://api.openuv.io/api/v1/forecast?lat=${lat}&lng=${lon}&alt=100&dt=`;
     const options = {
       headers: {
-        'x-access-token': 'openuv-derltnklrgu-io', // Replace with your actual token
+        'x-access-token': 'openuv-derltnfteyc-io', // Replace with your actual token
         'Content-Type': 'application/json',
       },
     };
